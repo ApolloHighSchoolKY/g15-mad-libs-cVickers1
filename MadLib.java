@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -20,13 +20,18 @@ public class MadLib
 
 	public MadLib()
 	{
-
+		verbs.add("punched");
+		nouns.add("Wal-Mart");
+		adjectives.add("massive");
+		story="I punched Wal-Mart in a massive way.";
 	}
 
 	public MadLib(String fileName)
 	{
 		//load stuff
-
+		loadNouns();
+		loadVerbs();
+		loadAdjectives();
 		try
 		{
 			//Read the different parts of the story and concatenate the resulting
@@ -87,21 +92,24 @@ public class MadLib
 
 	public String getRandomVerb()
 	{
-		return "";
+		int spot = (int)(Math.random()*verbs.size());
+		return "" + verbs.get(spot);
 	}
 
 	public String getRandomNoun()
 	{
-		return "";
+		Random rand = new Random();
+		return "" + nouns.get(rand.nextInt(nouns.size()));
 	}
 
 	public String getRandomAdjective()
 	{
-		return "";
+		Random rand = new Random();
+		return "" + adjectives.get(rand.nextInt(adjectives.size()));
 	}
 
 	public String toString()
 	{
-		return "";
+		return "" + story();
 	}
 }
